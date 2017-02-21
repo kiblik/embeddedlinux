@@ -1,0 +1,5 @@
+#!/bin/sh
+mkdir -p /mnt/$1
+mount /dev/$1 /mnt/$1
+find /mnt/$1/ -name '*.mp3' -print0 | xargs -0 mpg123
+umount /dev/$1       
